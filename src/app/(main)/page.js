@@ -1,3 +1,5 @@
+import LeftSidebar from "@/components/hompage/news/LeftSidebar";
+import RightSidebar from "@/components/hompage/news/RightSidebar";
 import { lightFormat } from "date-fns";
 
 async function getCategories() {
@@ -17,24 +19,16 @@ export default async function Home() {
     <div className="grid grid-cols-12 gap-4 container mx-auto my-[60px]">
 
        <div className="col-span-3">
-        <h2 className="font-bold text-lg">All Categories</h2>   
-        
-          <ul className="flex flex-col gap-3 mt-6">
-          {
-            categories.data.news_category.map(n => {
-
-              return <li key={n.category_id} className="bg-slate-100 p-2 rounded-md font-bold text-center text-md">{n.category_name}</li>
-            })
-          }
-          </ul>
+        <LeftSidebar categories={categories} activeId={"06"}></LeftSidebar>
        </div>
 
        <div className="font-bold text-3xl bg-purple-100 col-span-6">
         <h2 className="font-bold text-lg">All News</h2>
        </div>
 
-       <div className="font-bold text-3xl bg-yellow-100 col-span-3">
+       <div className="col-span-3">
         <h2 className="font-bold text-lg">Social icons</h2>
+        <RightSidebar></RightSidebar>
        </div>
 
     </div>
