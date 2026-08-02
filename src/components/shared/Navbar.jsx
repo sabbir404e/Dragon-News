@@ -6,7 +6,7 @@ import NavLink from './NavLink';
 
 const NavbarPage = () => {
     return (
-        <div className='flex justify-between container mx-auto gap-4 mt-6'>
+        <div className='flex justify-between container mx-auto gap-4 mt-6 items-center'>
             <div></div>
             <ul className='flex justify-between items-center gap-3 text-gray-700 '>
                 <li><NavLink href="/">Home</NavLink></li>
@@ -14,8 +14,8 @@ const NavbarPage = () => {
                 <li><NavLink href="/carrer">Carrer</NavLink></li>
             </ul>
             <div className='flex items-center gap-2'>
-                <Image src={useAvater} alt="" widthuser avater={60} height={60} ></Image>
-                <button className='btn btn-primary'><NavLink href="/login">Login</NavLink></button>
+                <Image src={useAvater} alt="User Avatar" width={60} height={60} />
+                <Link href="/login" className='btn btn-primary'>Login</Link>
             </div>
         </div>
     );
