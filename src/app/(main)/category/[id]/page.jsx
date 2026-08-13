@@ -1,4 +1,5 @@
 import LeftSidebar from "@/components/hompage/news/LeftSidebar";
+import NewsCard from "@/components/hompage/news/NewsCard";
 import RightSidebar from "@/components/hompage/news/RightSidebar";
 import React from "react";
 
@@ -39,9 +40,9 @@ const NewsCategoryPage = async ({ params }) => {
                 <h2 className="font-bold text-lg">All News</h2>
                 {
                      news.data.map(nn => {
-                        return <div key={nn._id} className="border p-6 rounded-md my-4">
+                        return <NewsCard key={nn._id} news={nn}>
                             {nn.title}
-                        </div>
+                        </NewsCard>
                     })
                 }
             </div>
